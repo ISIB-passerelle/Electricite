@@ -1,0 +1,233 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\usepackage{xcolor}
+\usepackage[margin=2.5cm]{geometry}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don’t use monospace font for urls
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\date{}
+
+\begin{document}
+
+\section{Électricité}\label{electricite}
+
+\subsection{Formules}\label{formules}
+
+
+
+\paragraph{Courant électrique}\label{courant-electrique}
+
+{\large $$ I = \dfrac{U}{R} $$ }
+
+
+\begin{itemize}
+	\item 
+		$ I $ en \textbf{ampères} ($A$)
+	\item
+		$ U $ en \textbf{volts} ($V$)
+	\item
+		$ R $ en \textbf{ohms} ($\Omega$)
+\end{itemize}
+
+
+
+\paragraph{Tension}\label{tension}
+
+
+{\large $$ U = R \cdot I $$ }
+
+\begin{itemize}
+	\item 
+		$ U $ en \textbf{volts} ($V$)
+	\item
+		$ I $ en \textbf{ampères} ($A$)
+	\item
+		$ R $ en \textbf{ohms} ($\Omega$)
+\end{itemize}
+
+
+
+\paragraph{Résistance}\label{resistance}
+
+{\large $$ R = \dfrac{U}{I} $$ }
+
+\begin{itemize}
+	\item 
+		$ R $ en \textbf{ohms} ($\Omega$)
+	\item
+		$ U $ en \textbf{volts} ($V$)
+	\item
+		$ I $ en \textbf{ampères} ($A$)
+\end{itemize}
+
+
+
+\paragraph{Puissance}\label{puissance}
+
+{\large $$ P = U \cdot I $$ }
+
+\begin{itemize}
+	\item 
+		$ P $ en \textbf{watts} ($W$)
+	\item
+		$ U $ en \textbf{volts} ($V$)
+	\item
+		$ I $ en \textbf{ampères} ($A$)
+\end{itemize}
+
+
+
+\paragraph{Puissance électrique transformée en chaleur (effet Joule)}\label{puissance-chaleur}
+
+{\large $$ P = U \cdot I = (R \cdot I) \cdot I = R \cdot I^2 = \dfrac{U^2}{R}$$ }
+
+\begin{itemize}
+	\item 
+		$ P $ en \textbf{watts} ($W$)
+	\item
+		$ U $ en \textbf{volts} ($V$)
+	\item
+		$ I $ en \textbf{ampères} ($A$)
+	\item 
+		$ R $ en \textbf{ohms} ($\Omega$)
+\end{itemize}
+
+
+
+\paragraph{Énergie électrique}\label{energie-electrique}
+
+{\large $$ W = P \cdot t $$ }
+
+\begin{itemize}
+	\item 
+		$ W $ en \textbf{joules} ($J$)
+	\item
+		$ P $ en \textbf{watts} ($W$)
+	\item
+		$ t $ en \textbf{secondes} ($s$)
+\end{itemize}
+
+
+
+\subsection{Propriétés des circuits en série}\label{propriete-circuit-serie}
+
+\begin{enumerate}
+	\item 
+		Le courant est le même dans tous les éléments du circuit.
+		
+		$$ I_M = I_L = I_C = \dots $$
+	\item
+		La somme des tensions aux bornes des charges est égale à la tension aux bornes de la source.
+		
+		$$ U_T = U_1 + U_2 + U_3 + \dots $$
+	\item
+		La somme des puissances absorbées par les charges est égale à la puissance fournie par la source.
+		
+		$$ P_T = P_1 + P_2 + P_3 + \dots $$
+		
+\end{enumerate}
+
+
+\subsubsection{Résistance équivalente dans un montage en série}\label{resistance-equivalente}
+
+La résistance de l’ensemble des résistances d’un circuit en série est égale à la somme des résistances individuelles.
+
+$$ R_{équivalente} = R_1 + R_2 + R_3 + \dots $$
+
+
+
+\subsection{Propriétés des circuits en parallèle}\label{propriete-circuit-parallele}
+
+\begin{enumerate}
+	\item 
+	La tension est la même aux bornes de chaque élément.
+	
+	$$ U_M = U_L = U_C = \dots $$
+	\item
+	La somme des courants tirés par les charges est égale au courant débité par la source.
+	
+	$$ I_T = I_1 + I_2 + I_3 + \dots $$
+	\item
+	La somme des puissances consommées par les charges est égale à la puissance fournie par la source.
+	
+	$$ P_T = P_1 + P_2 + P_3 + \dots $$
+	
+\end{enumerate}
+
+
+\subsubsection{Résistance équivalente dans un montage en parallèle}\label{resistance-equivalente-parallele}
+
+La résistante unique équivalente à deux résistances en parallèle est égale au produit des résistances divisés par leur somme.
+
+$$ R_{équivalente} = \dfrac{R_1 \cdot R_2}{R_1 + R_2} $$
+
+
+\subsection{Circuits à courant continu}\label{circuit-courant-continu}
+
+
+\paragraph{Première loi de Kirchhoff}\label{1re-loi-kirchhoff}
+
+La somme algébrique des tensions dans une boucle fermée d’un circuit est égale à zéro.
+
+
+\paragraph{Deuxième loi de Kirchhoff}\label{2e-loi-kirchhoff}
+
+La somme des courants qui arrivent à un nœud est égale à la somme des courants qui en partent.
+
+
+\paragraph{Énoncé du théorème de Thévenin}
+
+Tout circuit à deux bornes ouvertes $A$ et $B$ composé de plusieurs sources et de plusieurs résistances peut être remplacé par une source unique $E$ en série avec une résistance unique $R$.
+
+\paragraph{Théorème de superposition}
+
+Le courant circulant dans un élément de circuit est égal à la somme algébrique des courants qui seraient produits dans cet élément par chacune des sources agissant seule, les autres sources étant remplacées par des court-circuits.
+
+
+\end{document}
